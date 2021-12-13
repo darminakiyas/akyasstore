@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:title="Office"
+            android:icon="@drawable/ic_office"/>
+    <item android:title="Favorit"
+        android:id="@+id/favoritFragment"
+        android:icon="@drawable/ic_favorit_hitam"/>
+    <item
+        android:id="@+id/loginFragment"
+        android:icon="@drawable/ic_user"
+        android:title="User" />
+</menu>

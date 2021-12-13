@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".akun.AkunFragment">
+
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/merah">
+
+
+        <ImageView
+            android:id="@+id/imgProfil"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bulat_putih"
+            android:padding="10dp"
+            app:srcCompat="@drawable/ic_user" />
+
+        <TextView
+            android:id="@+id/txtNama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_toEndOf="@+id/imgProfil"
+            android:text="Sudarmin"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/txtHPKet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/imgProfil"
+            android:layout_below="@+id/txtNama"
+            android:text="HP : "
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:id="@+id/txtHp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/txtHPKet"
+            android:layout_below="@+id/txtNama"
+            android:text="082281415685"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:id="@+id/txtalamatKet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/imgProfil"
+            android:layout_below="@+id/txtHPKet"
+            android:text="Alamat : "
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:id="@+id/txtAlamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtHPKet"
+            android:layout_toEndOf="@+id/txtalamatKet"
+            android:text="Jl. P. Antasari RT.6 No. 7 Kota Tarakan"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtAlamat"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:text="Login" />
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtAlamat"
+            android:layout_toStartOf="@+id/btnLogin"
+            android:layout_marginEnd="20dp"
+            android:text="Logout" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/Relative1"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        android:background="@color/white"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/pesan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pesanan Saya"
+            android:drawableStart="@drawable/ic_note"
+            android:drawablePadding="10dp"/>
+
+        <TextView
+            android:id="@+id/riwatat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="Lihat Rowayat Pesanan >"
+            android:layout_marginEnd="10dp"/>
+
+        <View
+            android:id="@+id/garis1"
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            android:layout_height="1dp"
+            android:background="#9C9C9C"
+            android:layout_below="@+id/pesan"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:id="@+id/linearDikemas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_below="@+id/garis1">
+
+            <ImageView
+                android:id="@+id/imgDikemas"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="50dp"
+                android:src="@drawable/ic_note" />
+
+            <ImageView
+                android:id="@+id/imgDikirim"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/ic_note" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_below="@+id/linearDikemas">
+
+            <TextView
+                android:id="@+id/txtDikemas"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:text="Dikemas"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/txtDikirim"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="Dikirim"
+                android:gravity="center"/>
+        </LinearLayout>
+
+
+
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/Relative2"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Relative1"
+        android:background="@color/white"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/txtFavorit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Favorit Saya"
+            android:drawableStart="@drawable/ic_favorit_merah"
+            android:drawablePadding="10dp"/>
+
+        <TextView
+            android:id="@+id/txtJumlahFavorit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/txtFavoritKet"
+            android:text="66"
+            android:layout_marginEnd="5dp"
+            />
+        <TextView
+            android:id="@+id/txtFavoritKet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="Favorit >"
+            android:layout_marginEnd="10dp"/>
+
+        <View
+            android:id="@+id/garis2"
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            android:layout_height="1dp"
+            android:background="#9C9C9C"
+            android:layout_below="@+id/txtFavorit"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/txtPengaturanAkun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/garis2"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="10dp"
+            android:text="Pengaturan Akun"
+            app:drawableStartCompat="@drawable/ic_user" />
+
+        <TextView
+            android:id="@+id/txtPanahAkun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:text=">"
+            android:layout_marginEnd="10dp"
+            android:layout_below="@+id/garis2"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/ic_cart_putih"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_home"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

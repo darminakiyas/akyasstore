@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewModelRegister"
+            type="com.akyasstore.registrasi.RegistrasiViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="713dp"
+        tools:context=".registrasi.RegistrasiFragment">
+
+
+        <TextView
+            android:id="@+id/regisrasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:text="Regitrasi"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/edtNamaLengkap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/design_input"
+            android:drawableStart="@drawable/custom_nama"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:hint="Nama Lengkap"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/regisrasi" />
+
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:ems="10"
+            android:background="@drawable/design_input"
+            android:inputType="textEmailAddress"
+            android:hint="Email"
+            android:drawableStart="@drawable/custom_email"
+            android:padding="10dp"
+            android:drawablePadding="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/edtNamaLengkap"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="@+id/edtNamaLengkap"
+            app:layout_constraintTop_toBottomOf="@+id/edtNamaLengkap" />
+
+
+        <EditText
+            android:id="@+id/edtAlamat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/design_input"
+            android:drawableStart="@drawable/custom_alamat"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:hint="Alamat Lengkap"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/edtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+
+        <EditText
+            android:id="@+id/edtHP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/design_input"
+            android:drawableStart="@drawable/custom_hp"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:hint="Nomor HP"
+            android:inputType="text|phone"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/edtAlamat"
+            app:layout_constraintTop_toBottomOf="@+id/edtAlamat" />
+
+        <EditText
+            android:id="@+id/edtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/design_input"
+            android:drawableStart="@drawable/custom_password"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/edtHP"
+            app:layout_constraintTop_toBottomOf="@+id/edtHP" />
+
+        <Button
+            android:id="@+id/btnDaftar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:text="Daftar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
+
+        <TextView
+            android:id="@+id/txtsilahkanlogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Sudah punya akun silahkan login"
+            app:layout_constraintEnd_toEndOf="@+id/btnDaftar"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="@+id/btnDaftar"
+            app:layout_constraintTop_toBottomOf="@+id/btnDaftar"
+            android:textColor="@color/biru_laut"
+          />
+
+        <TextView
+            android:id="@+id/txtpesan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text=""
+            android:textColor="@color/biru_laut"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/regisrasi" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

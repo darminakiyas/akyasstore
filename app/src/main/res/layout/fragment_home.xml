@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.akyasstore.home.HomeViewModel" />
+    </data>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home.HomeFragment">
+
+    <!--untuk pencarian-->
+    <RelativeLayout
+        android:id="@+id/pencarian"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingEnd="15dp"
+        android:paddingStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/hijau"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toStartOf="@+id/btn_cart"
+            android:backgroundTint="#FFFFFF"
+            app:cardCornerRadius="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_marginStart="5dp"
+                    android:id="@+id/editPencarian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:ems="15"
+                    android:hint="Cari Barang"
+                    android:imeOptions="actionSend"
+                    android:inputType="textPersonName"
+                    android:textSize="14sp" />
+
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/btn_cart"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/ic_cart_putih" />
+
+        <TextView
+            android:id="@+id/txtJumlahFavorit"
+            android:layout_width="30dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="-15dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/btn_cart"
+            android:background="@drawable/bulat"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="11sp" />
+
+    </RelativeLayout>
+    <!--    akhir pencarian-->
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pencarian">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--carousel-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewCarousel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/list_carousel" />
+            <!--Akhir carousel-->
+
+            <!--Awal Menu-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="4"
+                tools:listitem="@layout/list_menu" />
+            <!-- akhir menu-->
+
+            <!-- titel Sayur-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SAYUR"
+                    android:textColor="@color/merah"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtLihatSemua1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/lihat_semua"
+                    android:textColor="#2196F3" />
+
+            </RelativeLayout>
+            <!-- akhir title-->
+
+            <!--Awal Sayur-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewSayur"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="2"
+                tools:listitem="@layout/list_sayur" />
+            <!-- akhir Sayur-->
+
+            <!-- titel Buah-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BUAH"
+                    android:textColor="@color/merah"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtLihatSemua2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/lihat_semua"
+                    android:textColor="#2196F3" />
+
+            </RelativeLayout>
+            <!-- akhir title-->
+
+            <!--Buah-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewBuah"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingEnd="5dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="2"
+                tools:listitem="@layout/list_buah"
+
+                />
+
+            <!-- akhir Buah-->
+
+            <!-- Iklan -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewIklan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="5dp"
+                android:paddingTop="10dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/list_iklan" />
+            <!-- Akhir Iklan-->
+
+            <!-- titel Daging-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DAGING"
+                    android:textColor="@color/merah"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtLihatSemua3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/lihat_semua"
+                    android:textColor="#2196F3" />
+
+            </RelativeLayout>
+            <!-- akhir title Daging-->
+
+            <!--Daging-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewDaging"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="2"
+                tools:listitem="@layout/list_daging"
+                />
+
+            <!-- akhir Daging-->
+
+            <!-- titel Sembako-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SEMBAKO"
+                    android:textColor="@color/merah"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtLihatSemua4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/lihat_semua"
+                    android:textColor="#2196F3" />
+
+            </RelativeLayout>
+            <!-- akhir title-->
+
+            <!--sembako-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewSembako"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="2"
+                tools:listitem="@layout/list_sembako"
+                />
+            <!-- akhir sembako-->
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/menu_home" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/responsive"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/abu_abu"
+        android:text="@{viewModel.response}"
+        android:textSize="24sp"
+        app:LoadStatus="@{viewModel.response}"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

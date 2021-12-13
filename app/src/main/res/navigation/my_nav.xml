@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.akyasstore.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_lihatSemuFragment"
+            app:destination="@id/lihatSemuFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pencarianFragment"
+            app:destination="@id/pencarianFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_akunFragment"
+            app:destination="@id/akunFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_regestrasiFragment"
+            app:destination="@id/regestrasiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lihatSemuFragment"
+        android:name="com.akyasstore.lihat_semua.LihatSemuaFragment"
+        android:label="fragment_lihat_semu"
+        tools:layout="@layout/fragment_lihat_semu" >
+        <argument
+            android:name="idKategori"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_lihatSemuFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_lihatSemuFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.akyasstore.detail.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="idBrg"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detailFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pencarianFragment"
+        android:name="com.akyasstore.pencarian.PencarianFragment"
+        android:label="PencarianFragment"
+        tools:layout="@layout/fragment_pencarian">
+        <argument
+            android:name="pencarian"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_pencarianFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_pencarianFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.akyasstore.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_regestrasiFragment"
+            app:destination="@id/regestrasiFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_akunFragment"
+            app:destination="@id/akunFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_akunFragment2"
+            app:destination="@id/akunFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritFragment"
+        android:name="com.akyasstore.favorit.FavoritFragment"
+        android:label="fragment_favorit"
+        tools:layout="@layout/fragment_favorit" />
+    <fragment
+        android:id="@+id/akunFragment"
+        android:name="com.akyasstore.akun.AkunFragment"
+        android:label="AkunFragment"
+        tools:layout="@layout/fragment_akun" >
+        <action
+            android:id="@+id/action_akunFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/regestrasiFragment"
+        android:name="com.akyasstore.registrasi.RegistrasiFragment"
+        android:label="RegestrasiFragment"
+        tools:layout="@layout/fragment_regestrasi">
+        <action
+            android:id="@+id/action_regestrasiFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+</navigation>
